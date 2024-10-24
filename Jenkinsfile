@@ -44,11 +44,12 @@ pipeline {
            }
        }
 
-        stage('Apply') {
-            steps {
-                sh "pwd;cd terraform/ ; terraform apply -input=false tfplan"
-            }
-        }
+       stage('Apply') {
+    steps {
+        bat "cd terraform && terraform apply -input=false tfplan"
+    }
+}
+
     }
 
   }
